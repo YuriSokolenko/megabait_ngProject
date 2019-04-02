@@ -9,7 +9,7 @@
         <!-- <div class="row col-sm-6" style="max-width:350px;"> -->
         <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
           <div class="form-group row">
-            <div class="row col-sm-6">
+            <div class=" col-sm-6">
               <label for="firstName">First name</label>
               <input type="text" class="form-control" name="firstName" [(ngModel)]="form.firstName" #firstName="ngModel"
                 required placeholder="First name" />
@@ -18,7 +18,7 @@
               </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class=" col-sm-6">
               <label for="secondName">Last name</label>
               <input type="text" class="form-control" name="secondName" [(ngModel)]="form.secondName"
                 #secondName="ngModel" required placeholder="Last name" />
@@ -26,12 +26,28 @@
                 <div *ngIf="secondName.errors.required">Second name is required</div>
               </div>
             </div>
+
+            <div class=" col-sm-6">
+              <label for="birthdate">Birthdate</label>
+              <input type="date" class="form-control" name="birthdate" [(ngModel)]="form.birthdate"
+                #birthdate="ngModel" required placeholder="Birthdate" />
+              <div *ngIf="f.submitted && birthdate.invalid">
+                <div *ngIf="birthdate.errors.required">Birthdate name is required</div>
+              </div>
+            </div>
+
+            <div class=" col-sm-6">
+              <label for="repatriation_date">Repatriation Date</label>
+              <input type="date" class="form-control" name="repatriation_name" [(ngModel)]="form.repatriation_name"
+                #repatriation_date="ngModel" required placeholder="Repatriation Date" />
+              <div *ngIf="f.submitted && repatriation_date.invalid">
+                <div *ngIf="repatriation_date.errors.required">Repatriation date is required</div>
+              </div>
+            </div>
           </div>
 
-
-
           <div class="form-group row">
-            <div class="col-sm-6 row">
+            <div class="col-sm-6">
               <label for="username">Your ID number</label>
               <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
                 required placeholder="ID number" />
@@ -40,7 +56,7 @@
               </div>
             </div>
 
-            <div class="col-sm-6 row">
+            <div class="col-sm-6">
               <label for="email">Email</label>
               <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" required
                 email placeholder="Email" />
@@ -50,8 +66,9 @@
               </div>
             </div>
           </div>
-          <div class="form-group form-row">
-            <div class="col-sm-6 row">
+
+          <div class="form-group row">
+            <div class="col-sm-6">
               <label for="password">Password</label>
               <input type="password" class="form-control" name="password" [(ngModel)]="form.password"
                 #password="ngModel" required minlength="6" placeholder="Password" />
@@ -60,30 +77,36 @@
                 <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
               </div>
             </div>
-    
-           
+            <div class="col-sm-6">
+              <label for="confirm_password">Confirm Password</label>
+              <input type="confirm_password" class="form-control" name="confirm_password" 
+                 required minlength="6" placeholder="Confirm_Password" />
+              <div *ngIf="f.submitted && confirm_password.invalid">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+              </div>
             </div>
+          </div>
        
           <div class="form-group row">
-              <div class="col-sm-6 row">
-
-            <label for="phone">Phone number</label>
-            <input type="number" class="form-control" name="phone" [(ngModel)]="form.phone" #phone="ngModel" 
+            <div class="col-sm-6">
+              <label for="phone">Phone number</label>
+              <input type="text" class="form-control" name="phone" [(ngModel)]="form.phone" #phone="ngModel" 
               phone placeholder="Phone number" />
-            <div *ngIf="f.submitted && phone.invalid">
-              <div *ngIf="phone.errors.required">Phone number is required</div>
-              <div *ngIf="phone.errors.phone">Phone number must be a valid phone number</div>
+              <div *ngIf="f.submitted && phone.invalid">
+                <div *ngIf="phone.errors.required">Phone number is required</div>
+                <div *ngIf="phone.errors.phone">Phone number must be a valid phone number</div>
+              </div>
             </div>
-          </div>
           </div>
 
           <div class="form-group row">
-            <div class="col-sm-6 row">
+            <!-- <div class="col-sm-6 row">
               <label for="address">Address</label>
               <input type="text" class="form-control" name="address"  [(ngModel)]="form.address" #address="ngModel"
                  placeholder="Street Address">
-            </div>
-            <div class="col-sm-6 row">
+            </div> -->
+            <div class="col-sm-6">
               <label for="district">District</label>
               <input type="text" class="form-control" name="district" [(ngModel)]="form.district" #district="ngModel"
                  placeholder="District">
@@ -92,7 +115,7 @@
 
 
           <div class="form-group row">
-              <div class="col-sm-6 row">
+              <div class="col-sm-6">
               <label for="city">City</label>
               <input type="text" class="form-control" name="city" [(ngModel)]="form.city" #city="ngModel" 
                 placeholder="City">
