@@ -28,10 +28,11 @@ export class RegisterComponent implements OnInit {
       this.form.username,
       this.form.email,
       this.form.password,
-      this.form.city,
+      // this.form.city,
       this.form.phone,
-      this.form.address,
-      this.form.district);
+      // this.form.address,
+      // this.form.district
+      );
 
     this.authService.signUp(this.signupInfo).subscribe(
       data => {
